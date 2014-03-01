@@ -1,0 +1,22 @@
+{
+  "author": "Benjamin Merot",
+  "checksums": {
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests/directory.pp": "8a9952012edda57ea557b3595b875568",
+    "LICENSE.txt": "a8964fdff69c773bc385158f35052963",
+    "manifests/init.pp": "27814730d405f1b1c77f0ab9bfc158c7",
+    "manifests/rule.pp": "6561bb94ea0fd00160f03a59121b5a90",
+    "Modulefile": "189f41e6f2e69ee050c12edbe65c178f",
+    "tests/init.pp": "d41d8cd98f00b204e9800998ecf8427e",
+    "README.markdown": "9167f5cc5c140b6ab77c333a7652d043"
+  },
+  "dependencies": [],
+  "description": "Control hourly incremental backup genrated via rdiff-backup and manage their destination if using NFS.",
+  "license": "GPL v3",
+  "name": "tuxomatic-remote_backup",
+  "project_page": "https://github.com/tux-o-matic/puppet-remote-backup",
+  "source": "",
+  "summary": "Puppet Module to manage backup using rdiff with built in support for NFS",
+  "types": [],
+  "version": "0.1.0"
+}
