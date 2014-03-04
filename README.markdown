@@ -1,9 +1,9 @@
 # Puppet Remote Backup #
 
 #### Manage hourly incremental backup of multiple folders
-- Define one or multiple directories to backup and a destination.
-- Module manages hourly job of incremental backup.
-- Optionally use in combination with NFS to store your backups remotely in one definition.
+- Define one or multiple directories to backup.
+- The module will automatically run hourly jobs for incremental backup (using rdiff).
+- Optionally use in combination with NFS to store your backups remotely all in one definition.
 
 -------
 
@@ -20,6 +20,14 @@ You can manage in a single definition a mount definition for your NFS storage an
  }
 ```
 
-By default the backup retention is set for 30 days, new incremental backup are generated every hour.
-This module has only be tested on RedHat based distributions. Using it on other systems is possible but might require adapting the package name of the dependencies.
+Simple hourly incremental backup from one or more folder/partition to another
+```
+ class { 'remote_backup::rule':
+       directories_to_backup => ["/var/log", "/var/www"],
+       destination => "/data",       
+ }
+```
+
+By default the backup retention is set for 30 days.
+This module has only been tested on RedHat based distributions. Using it on other systems is possible but might require adapting the package name of the dependencies.
 
