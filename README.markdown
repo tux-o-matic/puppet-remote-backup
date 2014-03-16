@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tux-o-matic/puppet-remote-backup.png?branch=master)](https://travis-ci.org/tux-o-matic/puppet-remote-backup)
+
 # Puppet Remote Backup #
 
 #### Manage hourly incremental backup of multiple folders
