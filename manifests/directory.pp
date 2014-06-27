@@ -24,7 +24,7 @@ define remote_backup::directory () {
 
   exec { $backupcmd:
     schedule => "hourly",
-    timeout  => 9000,
+    timeout  => 10000,
     require  => Package["rdiff-backup"],
   }
 

@@ -15,8 +15,8 @@
   "license": "GPL v3",
   "name": "tuxomatic-remote_backup",
   "project_page": "https://github.com/tux-o-matic/puppet-remote-backup",
-  "source": "",
-  "summary": "Puppet Module to manage backup using rdiff with built in support for NFS",
+  "source": "https://github.com/tux-o-matic/puppet-remote-backup",
+  "summary": "Easily declare incremental hourly backup rules with this module abstracting rdiff with built in support for NFS",
   "types": [],
-  "version": "0.1.0"
+  "version": "1.0.0"
 }
