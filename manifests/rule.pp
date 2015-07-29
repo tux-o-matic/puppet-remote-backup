@@ -28,19 +28,19 @@
 class remote_backup::rule ($directories_to_backup = [], $destination = $remote_backup::mount_path, $expiration = '30') {
   include remote_backup
 
-  package { "rdiff-backup": ensure => present }
+  package { 'rdiff-backup': ensure => present }
 
   if $directories_to_backup {
     remote_backup::directory { $directories_to_backup: }
   }
 
-  schedule { "hourly":
-    range  => "0-23",
+  schedule { 'hourly':
+    range  => '0-23',
     period => hourly,
   }
 
-  schedule { "daily":
-    range  => "1-7",
+  schedule { 'daily':
+    range  => '1-7',
     period => daily,
   }
 }
