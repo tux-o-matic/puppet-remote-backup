@@ -11,11 +11,11 @@
 You can manage in a single definition a mount definition for your NFS storage and the directories to backup there.
 ```shell
  class { 'remote_backup':
-       mount_path => "/mnt/backup,"
-       nfs_server_ip => "10.0.0.1",
-       nfs_server_path => "my_nfs_storage",
+       mount_path      => '/mnt/backup',
+       nfs_server_ip   => '10.0.0.1',
+       nfs_server_path => 'my_nfs_storage',
        backup_rule => {
-         directories_to_backup => ["/var/log", "/var/www"],
+         directories_to_backup => ['/var/log', '/var/www'],
       },
  }
 ```
@@ -23,8 +23,8 @@ You can manage in a single definition a mount definition for your NFS storage an
 Simple hourly incremental backup from one or more folder/partition to another
 ```shell
  class { 'remote_backup::rule':
-       directories_to_backup => ["/var/log", "/var/www"],
-       destination => "/data",       
+       directories_to_backup => ['/var/log', '/var/www'],
+       destination           => '/data',       
  }
 ```
 
