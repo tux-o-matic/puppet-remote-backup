@@ -17,19 +17,19 @@
 define remote_backup::directory () {
   include remote_backup::rule
 
-  $program = "/usr/bin/rdiff-backup --create-full-path"
+  $program = '/usr/bin/rdiff-backup --create-full-path'
   $destination = "${remote_backup::rule::destination}${name}"
   $backupcmd = "${program} ${name} ${destination}"
   $cleanupcommand = "/usr/bin/rdiff-backup --force --remove-older-than ${remote_backup::rule::expiration}D ${destination}"
 
   exec { $backupcmd:
-    schedule => "hourly",
+    schedule => 'hourly',
     timeout  => 10000,
-    require  => Package["rdiff-backup"],
+    require  => Package['rdiff-backup'],
   }
 
   exec { $cleanupcommand:
-    schedule => "daily",
+    schedule => 'daily',
     timeout  => 9000
   }
 

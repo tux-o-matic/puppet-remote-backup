@@ -48,21 +48,21 @@ class remote_backup (
 
   create_resources('class', $rule_class)
 
-  package { "nfs-utils": ensure => present }
+  package { 'nfs-utils': ensure => present }
 
   file { $mount_path:
-    ensure  => "directory",
+    ensure  => 'directory',
     replace => $replace,
   }
 
   mount { $mount_path:
+    ensure  => 'mounted',
     name    => $mount_path,
     device  => "${nfs_server_ip}:/${nfs_server_path}",
-    fstype  => "nfs",
-    ensure  => "mounted",
-    options => "nolock",
+    fstype  => 'nfs',    
+    options => 'nolock',
     atboot  => $mount_on_boot,
-    require => Package["nfs-utils"],
+    require => Package['nfs-utils'],
   }
 
 }
