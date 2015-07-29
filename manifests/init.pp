@@ -59,7 +59,7 @@ class remote_backup (
     ensure  => 'mounted',
     name    => $mount_path,
     device  => "${nfs_server_ip}:/${nfs_server_path}",
-    fstype  => 'nfs',    
+    fstype  => 'nfs',
     options => 'nolock',
     atboot  => $mount_on_boot,
     require => Package['nfs-utils'],
